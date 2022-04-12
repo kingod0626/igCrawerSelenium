@@ -1,4 +1,3 @@
-from ast import keyword
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -7,16 +6,20 @@ from selenium.webdriver.common.keys import Keys
 import time
 import os
 import wget
-from bs4 import BeautifulSoup
+
+accountLogin = input('輸入你的ig帳號:')
+passwordLogin = input('輸入你的ig密碼:')
 
 
-PATH = "chromedriver.exe"
+
+PATH="D:/code/workplace/igCrawerSele/chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 cookies = driver.get_cookies()
 print(f"main: cookies = {cookies}")
 driver.delete_all_cookies()
 
 driver.get("https://www.instagram.com/")
+
 
 username = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.NAME, "username"))
@@ -27,11 +30,12 @@ password = WebDriverWait(driver, 10).until(
 
 login = driver.find_element_by_xpath('//*[@id="loginForm"]/div/div[3]/button/div')
 
+time.sleep(5)
 
 username.clear()
 password.clear()
-username.send_keys('你的帳號')
-password.send_keys('密碼')
+username.send_keys(accountLogin)
+password.send_keys(passwordLogin)
 login.click()
 datasave = WebDriverWait(driver, 10).until(
         EC.presence_of_element_located((By.XPATH, '//*[@id="react-root"]/section/main/div/div/div/section/div/button'))
