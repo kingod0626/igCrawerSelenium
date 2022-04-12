@@ -12,7 +12,7 @@ passwordLogin = input('輸入你的ig密碼:')
 
 
 
-PATH="D:/code/workplace/igCrawerSele/chromedriver.exe"
+PATH="chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 cookies = driver.get_cookies()
 print(f"main: cookies = {cookies}")
