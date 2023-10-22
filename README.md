@@ -8,7 +8,10 @@
 
 ### 登入
 為模仿正常使用者，需自行登入可使用的ig帳號
-也可於程式碼中找到`accountLogin``passwordLogin`自行修改變數為ig帳號及密碼
+也可於程式碼中找到
+`accountLogin`
+`passwordLogin`
+自行修改變數為ig帳號及密碼
 
 ### 搜索tag更改
 可於keyward變數修改為任意可搜索tag
